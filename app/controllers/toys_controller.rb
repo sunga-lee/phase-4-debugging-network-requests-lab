@@ -5,6 +5,10 @@ class ToysController < ApplicationController
     toys = Toy.all
     render json: toys
   end
+  def show
+    toy = Toy.find(params[:id])
+    render json: toy.to_json
+  end
 
   def create
     toy = Toys.create(toy_params)
